@@ -1,0 +1,38 @@
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    background-color: #cccccc;
+    border-radius: 30px;
+    width: 120px;
+}
+
+.form-control .ng-touched .ng-dirty .ng-invalid {
+    border: 1px solid red;
+}
+
+.alert {
+    margin-top: 20px;
+}
+
+p.task-title {
+    font-weight: bold;
+}
+
+p.task-description {
+    font-size: 15px;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #cccccc;
+    border-radius: 30px;
+    padding: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+}

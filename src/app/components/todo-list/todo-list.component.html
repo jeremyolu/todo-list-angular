@@ -1,0 +1,32 @@
+<div class="list-container">
+    <p class="text-center">Add tasks to your todo list:</p>
+
+    <form [formGroup]="todoListForm">
+        <label>Task</label>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter a task" formControlName="task" />
+        </div>
+        <div *ngIf="task.touched && task.invalid" class="alert alert-danger">
+            <div *ngIf="task.errors?.['required']">task is required.</div>
+        </div>
+        <label>Description</label>
+        <div class="form-group">
+            <textarea type="text" rows="3" class="form-control" placeholder="Enter task description..." formControlName="description"></textarea>
+        </div>
+        <div *ngIf="description.touched && description.invalid" class="alert alert-danger">
+            <div *ngIf="description.errors?.['required']">description is required.</div>
+        </div>
+       
+        <button role="button" class="btn mt-3" (click)="addTask(todoListForm.value)" [disabled]="todoListForm.invalid">Add Task</button>
+    </form>
+
+    <div class="list">
+        <div *ngFor="let item of taskList" class="todo-item">
+            <div>
+                <p class="task-title">{{ item.task }}</p>
+                <p class="task-description">{{ item.description }}</p>
+            </div>
+            <div (click)="removeTask(item)">X</div>
+        </div>
+    </div>
+</div>
